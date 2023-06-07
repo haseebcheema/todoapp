@@ -6,13 +6,16 @@ if(process.env.NODE_ENV !== 'production'){
     require('dotenv').config();
 }
 
+const ejsLayouts = require('express-ejs-layouts');
 const indexRouter = require('./routes/index');
 const mongoose = require('mongoose');
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
+app.set('layout', 'layouts/layout');
 
 app.use(express.urlencoded({ extended: true }));
+app.use(ejsLayouts);
 app.use('/', indexRouter);
 app.use(express.static('public'));
 
