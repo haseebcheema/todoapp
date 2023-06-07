@@ -3,7 +3,7 @@ const router = express.Router();
 const todo = require('../model/todolist');
 
 router.get('/', (req, res) => {
-    res.send('hello there');
+    res.render('index');
 });
 
 module.exports = router;
