@@ -1,0 +1,23 @@
+<h1>Todo List Form</h1>
+<form action="/" method="POST">
+    <label>Title:</label>
+    <input type="text" name="title" required>
+    
+    <br>
+
+    <label>Description:</label>
+    <textarea type="text" name="description" required></textarea>
+    
+    <br>
+
+    <button type="submit">Create</button>
+</form>
+
+
+<br><br><br><br>
+
+<h1>todolist</h1>
+<% mylist.forEach(l => { %>
+    <h1> <%= l.title %> </h1>
+    <p> <%= l.description %> </p> 
+<% }); %>
