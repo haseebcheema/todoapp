@@ -1,18 +1,30 @@
 
-<form action="/" method="POST">
-    <%- include('./_form_fields') %>
-    <button type="submit">Add</button>
-</form>
+<div class="container">
+    <h1>Todo List</h1>
 
-
-<br><br><br><br>
-
-<h1>Your ToDo List</h1>
-<% mylist.forEach(l => { %>
-    <h1> <%= l.title %> </h1>
-    <p> <%= l.description %> </p> 
-    <a href="/<%= l._id %>/edit">Edit</a>
-    <form method="POST" action="/<%= l._id %>?_method=DELETE">
-        <button type="submit">Delete</button>
+    <!-- Add Todo Form -->
+    <form action="/" method="POST">
+        <h2>Add Todo</h2>
+        <%- include('./_form_fields') %>
+        <button type="submit">Add</button>
     </form>
-<% }); %>
+
+    <!-- Todo List -->
+    <div class="container">
+        <h1>Your Todo List</h1>
+        <div class="todo-list">
+            <% mylist.forEach(l => { %>
+            <div class="todo-item">
+                <h2><%= l.title %></h2>
+                <p><%= l.description %></p>
+                
+                    <a href="/<%= l._id %>/edit">Edit</a>
+                    <form method="POST" action="/<%= l._id %>?_method=DELETE">
+                        <button type="submit">Delete</button>
+                    </form>
+                
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</div>

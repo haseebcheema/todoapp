@@ -1,7 +1,12 @@
-<form method="POST" action="/<%= mylist.id %>?_method=PUT">
+<div class="container">
+    <form method="POST" action="/<%= mylist.id %>?_method=PUT">
+        <h1>Edit Todo</h1>
+        
+        <%- include('./_form_fields') %>
 
-    <%- include('./_form_fields') %>
-    <button type="submit">Update</button>
-    <a href="/">Cancel</a>
-
-</form>
+        <div class="edit-buttons">
+            <button type="submit" class="edit-btn">Update</button>
+            <a href="/" class="cancel-btn">Cancel</a>
+        </div>
+    </form>
+</div>
