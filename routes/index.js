@@ -14,8 +14,8 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const mylist = new todo({
-            title: req.body.title,
-            description: req.body.description
+            title: req.body.title.trim(),
+            description: req.body.description.trim()
         });
         await mylist.save();
         res.redirect('/');
